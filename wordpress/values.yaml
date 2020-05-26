@@ -1,0 +1,27 @@
+mysql:
+  app: wordpress
+  tier: mysql
+  pv:
+    name: mysql-persistent-storage
+    storage: 2Gi
+    access: ReadWriteMany
+    storageClass: manual
+  pvc:
+    name: mysql-persistent-storage
+    storage: 2Gi
+    access: ReadWriteMany
+    storageClass: manual
+
+wordpress:
+  app: wordpress
+  tier: frontend
+  pv:
+    name: wordpress-persistent-storage
+    storage: 1Gi
+    access: ReadWriteMany
+    storageClass: manual
+  pvc:
+    name: wordpress-persistent-storage
+    storage: 1Gi
+    access: ReadWriteMany
+    storageClass: manual
